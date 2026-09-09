@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Lifespan | How Much Time Do You Have Left?</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="dark-theme">
+    <div id="particles-js"></div>
+
+    <main class="app-container">
+      <section id="landing-page" class="view active">
+        <div class="hero">
+          <div class="glow-circle"></div>
+
+          <h1>How Much Time Do You Have <span class="accent">Left?</span></h1>
+
+          <p class="subtitle">
+            Discover an educational estimate of your remaining lifespan based
+            on your unique lifestyle factors.
+          </p>
+
+          <div class="disclaimer-box">
+            <p>
+              <i class="fas fa-exclamation-triangle"></i>
+              <strong>Disclaimer:</strong> This tool provides an educational
+              estimate only. It is not a medical diagnosis or a definitive
+              prediction. Individual lifespan is influenced by unpredictable
+              factors.
+            </p>
+
+            <label class="checkbox-container">
+              <input type="checkbox" id="agree-check" />
+
+              <span class="checkmark"></span>
+
+              I understand this is for educational purposes.
+            </label>
+          </div>
+
+          <button id="start-btn" class="btn btn-primary" disabled>
+            Start Calculation
+          </button>
+        </div>
+      </section>
+
+      <section id="questionnaire-page" class="view">
+        <div class="glass-card">
+          <div class="progress-container">
+            <div class="progress-bar" id="progress-bar"></div>
+
+            <span id="progress-text">Step 1 of 10</span>
+          </div>
+
+          <form id="lifespan-form">
+            <div id="step-content"></div>
+            <div class="form-navigation">
+              <button
+                type="button"
+                id="prev-btn"
+                class="btn btn-secondary"
+                style="display: none"
+              >
+                Previous
+              </button>
+              <button type="button" id="next-btn" class="btn btn-primary">
+                Next
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section id="results-page" class="view">
+        <div class="results-grid">
+          <div class="glass-card main-result">
+            <h2>Estimated Lifespan</h2>
+
+            <div class="big-number" id="estimated-total-age">0</div>
+
+            <p>Years</p>
+
+            <div class="health-score-container">
+              <p>Health Score: <span id="health-score-val">0</span>/100</p>
+
+              <div class="score-bar-bg">
+                <div id="score-bar-fill"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card countdown-section">
+            <h3>Remaining Time</h3>
+
+            <div class="countdown-grid">
+              <div class="time-unit">
+                <span id="rem-years">0</span>
+
+                <label>Years</label>
+              </div>
+
+              <div class="time-unit">
+                <span id="rem-months">0</span>
+
+                <label>Months</label>
+              </div>
+
+              <div class="time-unit">
+                <span id="rem-days">0</span>
+
+                <label>Days</label>
+              </div>
+
+              <div class="time-unit">
+                <span id="rem-hours">0</span>
+
+                <label>Hours</label>
+              </div>
+
+              <div class="time-unit">
+                <span id="rem-minutes">0</span>
+
+                <label>Minutes</label>
+              </div>
+
+              <div class="time-unit accent">
+                <span id="rem-seconds">0</span>
+
+                <label>Seconds</label>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card timeline-card">
+            <h3>Life Timeline</h3>
+
+            <div class="timeline-container">
+              <div class="timeline-line"></div>
+              <div class="marker birth">
+                <span>Birth</span>
+              </div>
+
+              <div class="marker current" id="marker-current">
+                <span>Today</span>
+              </div>
+
+              <div class="marker end" id="marker-end">
+                <span>End</span>
+              </div>
+
+              <div class="timeline-fill" id="timeline-fill"></div>
+            </div>
+          </div>
+
+          <div class="glass-card insights">
+            <h3>Insights & Recommendations</h3>
+
+            <div class="insight-columns">
+              <div class="insight-group">
+                <h4>
+                  <i class="fas fa-plus-circle text-success"></i>
+
+                  Positive Factors
+                </h4>
+
+                <ul id="positive-list"></ul>
+              </div>
+
+              <div class="insight-group">
+                <h4>
+                  <i class="fas fa-minus-circle text-danger"></i>
+
+                  Risk Factors
+                </h4>
+
+                <ul id="risk-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-buttons">
+          <button class="btn btn-secondary" onclick="location.reload()">
+            <i class="fas fa-redo"></i>
+
+            Restart
+          </button>
+
+          <button class="btn btn-primary" id="dounload-btn">
+            <i class="fas fa-file-pdf"></i>
+
+            Download PDF
+          </button>
+
+          <button class="btn btn-accent" id="share-btn">
+            <i class="fas fa-share-alt"></i>
+
+            Share
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/script.js"></script>
+  </body>
+</html>
